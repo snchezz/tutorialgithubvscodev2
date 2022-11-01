@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Tutorial GitHub by Andrés Sánchez | Scrollspy Edition</title>
+  <link rel="shortcut icon" href="img/logo.png">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <!--Inicio-->
+  <div class="container">
+
+    <div class="section">
+      <h2 class="header center white-text code">
+        Subir a GitHub con Git y VSCode
+      </h2> 
+      <h5 class="code">
+        <a href="#contacto">By Andrés Sánchez</a> <span class="white-text">|</span> <a class="enlaces" target="_blank" href="https://materializecss.com/scrollspy.html">Scrollspy Edition</a>
+      </h5>
+    </div>
+    <div class="row">
+      <div class="col s12 m9 l10">
+        <div id="instalacion" class="section scrollspy">
+          <h3 class="header center white-text code">1. Instalar Git</h3>
+          <h5 class="header white-text code">
+            Para ello nos iremos a una terminal (Ctrl + Alt + T) y pondremos el siguiente comando: <br>
+            <a href="#winScript">(Uso Windows)</a>
+          </h5>
+          <div class="section">
+            <div class="row">
+              <div class="col l9">
+                <div class="center">
+                  <input class="code white-text" type="text" value="sudo apt update && sudo apt install git" readonly
+                    id="installGit">
+                </div>
+              </div>
+              <div class="col l3">
+                <div class="center">
+                  <button class="btn white black-text" onclick="installGit()">Copiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<br>
+        
+<div id="version" class="section scrollspy">
+          <h3 class="header center white-text code">2. Comprobar version</h3>
+          <h5 class="header white-text code">
+            En nuestra terminal, usaremos:
+          </h5>
+          <div class="section">
+            <div class="row">
+              <div class="col l9">
+                <div class="center">
+                  <input class="code white-text" type="text" value="git --version" readonly id="versionGit">
+                </div>
+              </div>
+              <div class="col l3">
+                <div class="center">
+                  <button class="btn white black-text" onclick="versionGit()">Copiar</button>
+                </div>
+              </div>
+            </div>
+            <h5 class="header white-text code">
+              Esta nos deberia devolver algo como esto: git version 2.25.1"
+            </h5>
+          </div>
+        </div>
+        
+        <br>
+
+        <div id="configuracion" class="section scrollspy">
+          <h3 class="header center white-text code">3. Configurar Git</h3>
+          <h5 class="header white-text code">
+            Primero es obligatorio tener una cuenta registrada en <a target="_blank"
+              href="https://github.com/">GitHub</a>, si
+            no tienes una, <a href="https://github.com/signup">creala ahora</a>. <br>
+            Posteriormente usaremos estos dos comando en nuestra terminal:
+          </h5>
+          <div class="section">
+            <div class="row">
+              <div class="col l9">
+                <div class="center">
+                  <input class="code white-text" type="text"
+                    value="git config --global user.name &#34;tuNombre&#34; && git config --global user.email &#34;tuCorreo&#34;"
+                    id="configurarGit">
+                </div>
+              </div>
+              <div class="col l3">
+                <div class="center">
+                  <button class="btn white black-text" onclick="configurarGit()">Copiar</button>
+                </div>
+              </div>
+            </div>
+            <h5 class="header white-text code">
+              Este input de arriba podeis editarlo, cambiad tuNombre y tuCorreo (el correo que hayais usado en GitHub) y
+              dadle
+              a copiar también
+            </h5>
+            <h5 class="header white-text code">
+              Para comprobar que todo ha ido bien, usad esto:
+            </h5>
+            <div class="section">
+              <div class="row">
+                <div class="col l9">
+                  <div class="center">
+                    <input class="code white-text" type="text" value="git config --list" readonly id="comprobarGit">
+                  </div>
+                </div>
+                <div class="col l3">
+                  <div class="center">
+                    <button class="btn white black-text" onclick="comprobarGit()">Copiar</button>
+                  </div>
+                </div>
+              </div>
+              <h5 class="white-text code">
+                El resultado debe ser: <br>
+                user.name=Andrés <br>
+                user.email=sitosanzdev@gmail.com <br>
+                ...
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div id="clave" class="section scrollspy">
+          <h3 class="header center white-text code">4. La clave</h3>
+          <h5 class="header white-text code center">
+            Windows
+          </h5>
+          <h5 id="winScript" class="header white-text code">
+            Si programais Script Bash en Windows... Bueno, lo primero, debes descargar <a
+              href="https://git-scm.com/download/win">Git</a> y instalarlo. <br><br>
+            Nuevamente seguiremos los pasos de configuración, ya sea desde Git Bash (la terminal que hemos intalado) o
+            desde
+            el mismo VSCode (Terminal > Nuevo Terminal > Símbolo v al lado del + en la Terminal > Git Bash) <br><br>
+            Una vez hecho esto, cuando hagáis vuestro primer <i>git push</i> os debería salir una interfaz para iniciar
+            sesión
+            desde el navegador (si ya habeis iniciado sesión, se hara automaticamente)
+          </h5>
+          <div class="section">
+            <div class="row">
+              <div class="col l6 s12">
+                <div class="center">
+                  <img class="responsive-img materialboxed" src="img/git.png" alt="">
+                </div>
+              </div>
+              <div class="col l6 s12">
+                <div class="center">
+                  <img class="responsive-img materialboxed" src="img/success.png" alt="">
+                </div>
+              </div>
+              <h5 class="white-text code">
+                Izquierda/Arriba: Interfaz de inicio se sesión.
+                Derecha/Abajo: Inicio de sesión exitoso.
+              </h5>
+            </div>
+            <br>
+            <h5 class="header white-text code center">
+              Ubuntu
+            </h5>
+            <h5 class="white-text code">
+              Para configurar la autenticación en Git Bash, al hacer nuestro primer <i>git push</i> nos pedirá un
+              usuario y
+              contraseña, pero esta contraseña <b>NO</b> es la que hemos registrado en GitHub. Esa "contraseña" es el
+              token
+              que vamos a generar ahora.
+            </h5>
+            <div class="section">
+              <div class="row">
+                <div class="col l6 s12">
+                  <div class="center">
+                    <img class="responsive-img materialboxed" src="img/token.png" alt="">
+                  </div>
+                </div>
+                <h5 class="white-text code">
+                  Para crear el token, vamos a <a target="_blank" href="https://github.com/settings/tokens">Tokens
+                    GitHub</a>
+                </h5>
+              </div>
+              <h5 class="white-text code">
+                - ¡IMPORTANTE!: Tener correo verificado <br>
+                - Generate new token > Generate new token (classic) <br>
+                - Le ponemos un nombre (note)<br>
+                - Configuramos su expiración (yo pongo 60/90 días)<br>
+                - En scopes seleccionamos: repo / workflow / write:packages / delete:packages / admin:org <br>
+                - Abajo le damos a <i>Generate token</i> <br>
+                Nos aparecerá un código así: ghp_AS3e234SsdweSdwed. Esta es nuestra <b>contraseña</b>
+              </h5>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div id="uso-git" class="section scrollspy">
+          <h3 class="header center white-text code">5. Uso de Git</h3>
+          <h5 class="header white-text code center">
+            Crear un repositorio
+          </h5>
+          <div class="section">
+            <div class="row">
+              <div class="col l6 s12">
+                <div class="center">
+                  <img class="responsive-img materialboxed" src="img/repositorio.png" alt="">
+                </div>
+              </div>
+              <h5 class="white-text code">
+                Para crear un repositorio nos iremos a nuestra foro de perfil, al símbolo + que hay al lado y le
+                daremos a
+                new repository, añadiremos el nombre y le daremos a crear repositorio o bien nos iremos a <a
+                  target="_blank" href="https://github.com/new">Nuevo Repositorio</a>. Una vez creado el
+                repositorio, nos saldrán varias
+                líneas de comandos, de aquí, usaremos las siguientes de una en una <b>(Indudablemente en VSCode
+                  o en la carpeta contendero desde Git Bash)</b>:
+              </h5>
+            </div>
+            <h5 class="header white-text code center">
+              Iniciar un repositorio
+              <br><br>
+            </h5>
+            <div class="row">
+              <div class="col l6 s12">
+                <div class="center">
+                  <img class="responsive-img materialboxed" src="img/repositoriolinea.png" alt="">
+                </div>
+              </div>
+              <div class="col l6 s12">
+                <h5 class="white-text code">
+                  # Iniciamos el repositorio<br>
+                  git init <br>
+                  # Lo enlazamos al que hemos creado<br>
+                  git remote add origin https://github.com/usuario/repositorio.git <br>
+                  # Añadimos todos los archivos<br>
+                  git add .<br>
+                  # Guardamos la version<br>
+                  git commit -m "VERSION"<br>
+                  # Cargamos el contenido en el repositorio<br>
+                  git push -u origin master <br>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+          <h5 class="header white-text code center">
+            Actualizar un repositorio
+          </h5>
+          <h5 class="white-text code">
+            Para actualizar un repositorio deberiamos usar estos comandos: <br>
+            # Añadimos todos los archivos<br>
+            git add .<br>
+            # Guardamos la version<br>
+            git commit -m "VERSION"<br>
+            # Cargamos el contenido en el repositorio<br>
+            git push -u origin master <br>
+          </h5>
+
+          <h5 class="header white-text code center">
+            Borrar un repositorio
+          </h5>
+          <h5 class="white-text code">
+            Dentro de GitHub entramos al repositorio > Settings (bajamos del todo) > Delete this repository,
+            deberemos poner
+            nombreusuario/nombrerepositorio e incluso en algunos casos volver a iniciar sesión. <br>
+            Para borrar todos los archivos .git y no reinicializar un repositorio deberemos poner por comandos: <br>
+            <i>rm -rf
+              .git </i>
+          </h5>
+        </div>
+
+        <div id="contacto" class="section scrollspy">
+          <h3 class="header center white-text code">Contacto</h3>
+          <div class="center">
+            <h4 class="code" id="enlaces">
+              <a class="enlaces" target="_blank" href="https://www.linkedin.com/in/andres-sanchez-vera/">LinkedIn</a> <span
+                class="white-text">|</span>
+              <a class="enlaces" target="_blank" href="https://github.com/snchezz">GitHub</a>
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col hide-on-small-only m3 l2">
+        <div class="toc-wrapper">
+          <ul class="section table-of-contents">
+            <li><a class="code white-text" href="#instalacion">1. Instalar Git</a></li>
+            <li><a class="code white-text" href="#version">2. Comprobar version</a></li>
+            <li><a class="code white-text" href="#configuracion">3. Configurar Git</a></li>
+            <li><a class="code white-text" href="#clave">4. La clave</a></li>
+            <li><a class="code white-text" href="#uso-git">5. Uso de Git</a></li>
+            <li><a class="code white-text" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+</body>
+
+</html>
